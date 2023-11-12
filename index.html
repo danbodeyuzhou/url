@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="asset/img/favicon.png"  >
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>short</title>
+    <title>短链接</title>
     <style>
       :root {
         --color-primary: #5c7cfa;
@@ -18,7 +18,7 @@
       }
 
       body {
-        max-width: 30rem;
+        max-width: 20rem;
         margin-left: auto;
         margin-right: auto;
         padding-left: 2rem;
@@ -263,7 +263,7 @@
 
               $nextTick(() => {
                 $refs.url.select()
-                this.alert = { type: 'success', message: `链接 ${document.execCommand('Copy') ? '复制' : '生成'} ` }
+                this.alert = { type: 'success', message: `成功' : '生成'} ` }
               })
             })
             .catch(e => {
