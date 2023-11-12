@@ -203,15 +203,15 @@
     </style>
   </head>
   <body>
-    <header><h1>short</h1></header>
+    <header><h1>小牛一号 短链接生成</h1></header>
     <main x-data="app" x-cloak>
       <p x-show.transition.opacity="alert" :class="alert?.type" x-text="alert?.message"></p>
-      <input placeholder="输入要缩短的网址..." x-model="url" x-ref="url" />
+      <input placeholder="以http(s)://开头..." x-model="url" x-ref="url" />
       <details>
         <summary>自定义设置</summary>
         <div>
-          <input placeholder="slug" x-model="slug" />
-          <small>Slug 默认是随机生成的短 id。</small>
+          <input placeholder="输入..." x-model="slug" />
+          <small>自定义后缀链接</small>
         </div>
       </details>
       <button :class="{ loading }" :disabled="loading || isValidated()" @click="submit($refs, $nextTick)">生成</button>
