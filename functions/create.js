@@ -5,7 +5,7 @@
 // Path: functions/create.js
 
 function generateRandomString(length) {
-    const characters = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ🆗';
+    const characters = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let result = '';
 
     for (let i = 0; i < length; i++) {
@@ -40,12 +40,12 @@ export async function onRequestPost(context) {
 
     // url格式检查
     if (!/^https?:\/\/.{3,}/.test(url)) {
-        return Response.json({ message: 'Illegal format: url.' })
+        return Response.json({ message: '格式有误' })
     }
 
     // 自定义slug长度检查 2<slug<10 是否不以文件后缀结尾
     if (slug && (slug.length < 2 || slug.length > 10 || /.+\.[a-zA-Z]+$/.test(slug))) {
-        return Response.json({ message: 'Illegal length: slug, (>= 2 && <= 10), or not ending with a file extension.' });
+        return Response.json({ message: '输入一个2-10位的后缀，不能以文件后缀结尾' });
     }
     
     
@@ -64,7 +64,7 @@ export async function onRequestPost(context) {
 
             // slug 已存在
             if (existUrl) {
-                return Response.json({ message: 'Slug already exists.' })
+                return Response.json({ message: '此后缀已被占用' })
             }
         }
 
@@ -78,7 +78,7 @@ export async function onRequestPost(context) {
         const bodyUrl = new URL(url);
 
         if (bodyUrl.hostname === originurl.hostname) {
-            return Response.json({ message: 'You cannot shorten a link to the same domain.' }, {
+            return Response.json({ message: '已经生成了' }, {
                 status: 400
             })
         }
