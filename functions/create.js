@@ -43,9 +43,9 @@ export async function onRequestPost(context) {
         return Response.json({ message: '格式有误' })
     }
 
-    // 自定义slug长度检查 2<slug<10 是否不以文件后缀结尾
-    if (slug && (slug.length < 2 || slug.length > 10 || /.+\.[a-zA-Z]+$/.test(slug))) {
-        return Response.json({ message: '输入一个2-10位的后缀，不能以文件后缀结尾' });
+    // 自定义slug长度检查 1<slug<35 且是否不以文件后缀结尾
+    if (slug && (slug.length < 1 || slug.length > 35 || /.+\.[a-zA-Z]+$/.test(slug))) {
+        return Response.json({ message: '输入一个1-35位的后缀，不能以文件后缀结尾' });
     }
     
     
