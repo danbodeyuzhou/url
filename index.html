@@ -228,12 +228,12 @@
         },
         submit ($refs, $nextTick) {
           if (!this.url) {
-            this.alert = { type: 'error', message: '缺少必需的参数：url。' }
+            this.alert = { type: 'error', message: '缺少必需的参数' }
             return
           }
 
           if (this.isValidated()) {
-            this.alert = { type: 'error', message: '非法格式：url。' }
+            this.alert = { type: 'error', message: '非法格式' }
             return
           }
 
