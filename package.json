@@ -1,7 +1,7 @@
 {
   "name": "short",
   "version": "1.0.0",
-  "description": "一个短链接",
+  "description": "短链接",
   "main": "index.js",
   "dependencies": {
     "wrangler": "^3.5.1"
