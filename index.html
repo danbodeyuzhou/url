@@ -210,8 +210,7 @@
       <details>
         <summary>自定义</summary>
         <div>
-          <input placeholder="输入..." x-model="slug" />
-          <small>自定义后缀链接</small>
+          <input placeholder="自定义后缀链接" x-model="slug">
         </div>
       </details>
       <button :class="{ loading }" :disabled="loading || isValidated()" @click="submit($refs, $nextTick)">生成</button>
